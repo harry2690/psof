@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+	</head>
+	<body ng-app="PatientSearch" ng-controller="MainController">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="container">
+    	    <div id="navbar" class="collapse navbar-collapse">
+        	  <ul class="nav navbar-nav">
+            	<li><a href="index.html">查詢清單</a></li>
+	            <li class="active"><a href="hospitalList.html">醫院清單</a></li>
+        	  </ul>
+	        </div><!--/.nav-collapse -->
+    	  </div>
+	    </nav>
+    	</br>
+	    </br>
+		<div class="container">
+			<div class="row">
+				<h2>最後更新時間:{{lastmodify}}</h2>
+			</div>
+			<div class="row" ng-repeat="hospital in hospitals | filter:searchFilter">
+				 <div class="jumbotron">
+       				 <h1>{{hospital['醫院']}}</h1>
+       				 <p>地區：{{hospital['社福中心']}}</p>
+        			 <p>聯絡電話：{{hospital['辦公室電話']}}</p>
+	 	         </div>
+			</div>
+			<div class="row">
+				資料來源:<a href="https://gist.github.com/tony1223" target="_blank">tony1223</a>
+			</div>
+		</div>
+		<script>
+			angular.module('PatientSearch',[])
+				.controller('MainController',function($scope, $http, $filter){
+					$http.get('https://gist.githubusercontent.com/tony1223/695a3c4c2d1ccb8eae85/raw/fd29dcf3d5f345f7e77230009bcbdb0e2fd84741/gistfile1.json').success(function(result) {
+        				$scope.hospitals = result.data;
+        				$scope.lastmodify = result.lastmodify;
+        				
+      				});
+      				$scope.searchFilter = {};
+				}
+			);
+		</script>
+	</body>
+</html>

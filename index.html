@@ -11,6 +11,18 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
 	</head>
 	<body ng-app="PatientSearch" ng-controller="MainController">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="container">
+    	    <div id="navbar" class="collapse navbar-collapse">
+        	  <ul class="nav navbar-nav">
+            	<li class="active"><a href="index.html">查詢清單</a></li>
+	            <li><a href="hospitalList.html">醫院清單</a></li>
+        	  </ul>
+	        </div><!--/.nav-collapse -->
+    	  </div>
+	    </nav>
+    	</br>
+	    </br>
 		<div class="container">
 			<div class="row">
 				<h2>最後更新時間:{{lastmodify}}</h2>
@@ -72,13 +84,10 @@
       				$scope.search = function(){
         				if($scope.patientName.length >= 3){
         					$scope.searchFilter['姓名'] = $scope.patientName.substr(0,1) + '○' + $scope.patientName.substr(2);
-        					console.log($scope.searchFilter['姓名']);
         				}else if($scope.patientName.length == 2){
         					$scope.searchFilter['姓名'] = $scope.patientName.substr(0,1) + '○';
-        					console.log($scope.searchFilter['姓名']);
         				}else{
         					$scope.searchFilter['姓名'] = $scope.patientName;
-        					console.log($scope.searchFilter['姓名']);
         				}
         				$scope.patientsResult = $filter('filter')($scope.patients,$scope.searchFilter);;
         			}
