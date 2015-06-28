@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+		<title>八仙粉塵爆事件 - 病患搜尋</title>
+		<script>
+  			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			  ga('create', 'UA-64569290-1', 'auto');
+			  ga('send', 'pageview');
+		</script>
+	</head>
+	<body ng-app="PatientSearch" ng-controller="MainController">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="container">
+    	    <div id="navbar" class="collapse navbar-collapse">
+        	  <ul class="nav navbar-nav">
+            	<li><a href="index.html">查詢清單</a></li>
+	            <li><a href="hospitalList.html">醫院清單</a></li>
+	            <li class="active"><a href="howToHelp.html">如何幫助傷者</a></li>
+        	  </ul>
+	        </div><!--/.nav-collapse -->
+    	  </div>
+	    </nav>
+    	</br>
+	    </br>
+		<div class="container">
+			<div class="row">
+				 <div class="jumbotron">
+       				 <h1>如何幫助傷者度過難關？</h1>
+       				 <p>八仙樂園意外造成500多人燒傷或嗆傷， 81氣爆傷痛猶未撫平，卻又發生如此重大災害，陽光基金會感到萬分震驚與心痛，陽光執行長緊急召集團隊密切商議可提供的即時關懷服務，並於即刻起開放”陽光關懷諮詢服務專線”，包含提供傷者及家屬現階段實用的心理陪伴建議以及居家燒傷照護方法，期望能助傷者一起渡過這艱難時刻。</p>
+					 </br>
+					 </br>
+					 <p>● 陽光關懷諮詢服務專線：( 即日起08:30~21:30 由陽光專業社工為您服務 )</p>
+					 <p>✓ 北區(02) 2507-8006 分機107 </p>
+					 <p>✓ 中區(04)2358-2336</p>
+					 <p>✓ 雲嘉(05)228-0300</p>
+					 <p>✓ 南區(07)558-7166</p>
+					 <p>✓ 東區(03) 856-3213</p>
+					 </br>
+					 </br>
+					 <hr>
+					 <h2>創傷心理陪伴建議</h2>
+					 </br>
+					 <p>如果您是受害當事人的親朋好友或家屬，敬請參考以下建議：</p>
+					 </br></br>
+					 <p>1. 給予當事人他需要的陪伴，建立安全感：</p>
+					 <p>突發事件的傷害會讓人失去自信、無所適從，除了用話語安撫外，尊重當事人不同的需要，給予適當的陪伴、增加其能力感，包含想要人陪還是想要先靜一下(不放心的話親友可在近處安靜的陪伴)，或是想要誰來陪伴、下一餐想要吃甚麼，由小細節中重新建立當事人對生活的掌控感。</p>
+					 </br>
+					 <p>2. 鼓勵當事人表達情緒：</p>
+					 <p>無論用哭的、說的，都盡量給予其空間抒發情緒和壓力。</p>
+					 </br>
+					 <p>3. 同理他的感覺：</p>
+					 <p>您可以用「我知道你非常痛」「當時真的很可怕」「換作是我也一定很害怕｣等話語，讓當事人感受到被接納、同理，而不要急著打斷他。</p>
+					 </br>
+					 <p>4. 不應否定或拒絕他的感受：</p>
+					 <p>勿一味地要求他：「不用想太多」「不要哭了」，這樣反而會讓他壓力而無法抒解！</p>
+					 </br>
+					 <p>5. 更不要自責或指責傷者：</p>
+					 <p>當傷者沮喪、懊惱「早知道就⋯」告訴他「這是意外，不是你的錯！」由於此次受傷者大多是學生、年輕族群，家屬不要在此時責怪孩子「愛玩」之類的話語。</p>
+					 </br></br>
+					 <hr>
+					 <h2>輕度燒傷的居家照護</h2>
+					 </br>
+					 <p>輕度燒傷返家療養者,居家照護的原則如下:</p>
+					 </br>
+					 <p>1.勿輕信偏方：燒傷傷口的照顧首在避免感染,因此傷口的護理應依照合格醫師所開的藥物 使用,不可自行亂塗抹藥物,以避免傷口惡化。傷口護理要依據醫師或護理 人員教導的無菌原則處理。</p>
+					 <p>2.水泡處理：淺二度以上即會產生水泡,產生水泡時不可自行弄破,以免惡化甚至感染; 小水泡會自行消退,大面積水泡可到醫院讓醫護人員處理或詢問治療師處理 方式,萬一水泡破掉請勿撕掉水泡皮,保持清潔小心護理。</p>
+					 <p>3.傷口清潔： </p>
+					 <p>(1).洗滌傷口的時候,用冷開水即可或生理食鹽水清洗傷口,必要時可用中 性肥皂,之後宜用消毒過的棉枝吸乾再上藥。 </p>
+					 <p>(2).還沒有完全痊癒的傷口,應盡量保持乾燥;如果傷口弄髒弄濕,應隨時 換藥以免再感染。 </p>
+					 <p>(3).小面積傷口,可以在專業醫師的指導下,以人工敷料來做適宜的傷口保 護。 </p>
+					 <p>(4).遭細菌感染的傷口常有異味,若持續紅腫熱痛,或膿液或分泌物較多, 請就醫治療。</p>
+					 <p>4.盡量避免陽光直接照射： 預防皮膚色澤加深;出門時應戴寬邊遮陽帽、撐傘或穿長袖衣褲,並塗防曬 產品。</p>
+					 </br>
+					 </br>
+					 <p>資料來源:<a href="https://www.facebook.com/Sunshine.Taiwan/posts/10153528711047625?fref=nf" target="_blank">陽光基金會</a></p>
+	 	         </div>
+			</div>
+		</div>
+	</body>
+</html>
