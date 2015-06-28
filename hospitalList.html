@@ -29,9 +29,10 @@
 			</div>
 			<div class="row" ng-repeat="hospital in hospitals | filter:searchFilter">
 				 <div class="jumbotron">
-       				 <h1>{{hospital['醫院']}}</h1>
-       				 <p>地區：{{hospital['社福中心']}}</p>
-        			 <p>聯絡電話：{{hospital['辦公室電話']}}</p>
+       				 <h1>{{hospital['醫院名稱']}}</h1>
+       				 <p>聯絡電話：{{hospital['聯絡電話']}}</p>
+        			 <p>地址：{{hospital['地址']}}</p>
+        			 <p><a href="https://www.google.com.tw/maps/place/{{hospital['地址']}}" target="_blank">點我看地圖</a></p>
 	 	         </div>
 			</div>
 			<div class="row">
@@ -41,7 +42,7 @@
 		<script>
 			angular.module('PatientSearch',[])
 				.controller('MainController',function($scope, $http, $filter){
-					$http.get('https://gist.githubusercontent.com/tony1223/695a3c4c2d1ccb8eae85/raw/fd29dcf3d5f345f7e77230009bcbdb0e2fd84741/gistfile1.json').success(function(result) {
+					$http.get('https://raw.githubusercontent.com/harry2690/psof/gh-pages/hospitals.json').success(function(result) {
         				$scope.hospitals = result.data;
         				$scope.lastmodify = result.lastmodify;
         				
