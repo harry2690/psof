@@ -87,7 +87,7 @@
 		<script>
 			angular.module('PatientSearch',[])
 				.controller('MainController',function($scope, $http, $filter){
-					$http.get('https://gist.githubusercontent.com/tony1223/098e45623c73274f7ae3/raw').success(function(result) {
+					$http.get('https://raw.githubusercontent.com/harry2690/psof/gh-pages/patient.json').success(function(result) {
         				$scope.patients = result.data;
         				$scope.lastmodify = result.lastmodify;
         				
