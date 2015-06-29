@@ -38,7 +38,7 @@
 	    </br>
 		<div class="container">
 			<div class="row">
-				<h2>最後更新時間:{{lastmodify}}</h2>
+				<h2>最後更新時間:<span ng-bind="lastmodify"></span></h2>
 			</div>
 			<div class="row">
 				<form class="form-inline">
@@ -49,8 +49,8 @@
 			<div class="row">
                 <div class="row" ng-repeat="insurance in insurances | filter:searchFilter">
                      <div class="jumbotron">
-                         <h1>{{insurance['公司名稱']}}</h1>
-                         <p>聯絡電話：{{insurance['連絡電話']}}</p>
+                         <h1><span ng-bind="insurance['公司名稱']"></span></h1>
+                         <p>聯絡電話：<span ng-bind="insurance['連絡電話']"></span></p>
                      </div>
                 </div>
 			</div>

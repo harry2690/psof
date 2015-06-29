@@ -38,7 +38,7 @@
 	    </br>
 		<div class="container">
 			<div class="row">
-				<h2>最後更新時間:{{lastmodify}}</h2>
+				<h2>最後更新時間:<span ng-bind="lastmodify"></span></h2>
 			</div>
 			<div class="row">
 				<form class="form-inline">
@@ -63,17 +63,17 @@
 						<th>轉診要求</th>
 					</tr>
 					<tr ng-repeat="patient in patientsResult | filter:searchFilter">
-						<td>{{patient['編號']}}</td>
-						<td>{{patient['縣市別']}}</td>
-						<td>{{patient['收治單位']}}</td>
-						<th>{{patient['檢傷編號']}}</th>
-						<td>{{patient['姓名']}}</td>
-						<td>{{patient['性別']}}</td>
-						<td>{{patient['國籍']}}</td>
-						<td>{{patient['年齡']}}</td>
-						<td>{{patient['救護檢傷']}}</td>
-						<td>{{patient['即時動向']}}</td>
-						<td>{{patient['轉診要求']}}</td>
+						<td><span ng-bind="patient['編號']"></span></td>
+						<td><span ng-bind="patient['縣市別']"></span></td>
+						<td><span ng-bind="patient['收治單位']"></span></td>
+						<th><span ng-bind="patient['檢傷編號']"></span></th>
+						<td><span ng-bind="patient['姓名']"></span></td>
+						<td><span ng-bind="patient['性別']"></span></td>
+						<td><span ng-bind="patient['國籍']"></span></td>
+						<td><span ng-bind="patient['年齡']"></span></td>
+						<td><span ng-bind="patient['救護檢傷']"></span></td>
+						<td><span ng-bind="patient['即時動向']"></span></td>
+						<td><span ng-bind="patient['轉診要求']"></span></td>
 					</tr>
 				</table>
 			</div>

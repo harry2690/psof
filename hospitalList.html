@@ -38,13 +38,13 @@
 	    </br>
 		<div class="container">
 			<div class="row">
-				<h2>最後更新時間:{{lastmodify}}</h2>
+				<h2>最後更新時間:<span ng-bind="lastmodify"></span></h2>
 			</div>
 			<div class="row" ng-repeat="hospital in hospitals | filter:searchFilter">
 				 <div class="jumbotron">
-       				 <h1>{{hospital['醫院名稱']}}</h1>
-       				 <p>聯絡電話：{{hospital['聯絡電話']}}</p>
-        			 <p>地址：{{hospital['地址']}}</p>
+       				 <h1><span ng-bind="hospital['醫院名稱']"></span></h1>
+       				 <p>聯絡電話：<span ng-bind="hospital['聯絡電話']"></span></p>
+        			 <p>地址：<span ng-bind="hospital['地址']"></span></p>
         			 <p><a href="https://www.google.com.tw/maps/place/{{hospital['地址']}}" target="_blank">點我看地圖</a></p>
 	 	         </div>
 			</div>
