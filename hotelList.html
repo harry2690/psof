@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+		<title>八仙粉塵爆事件 - 飯店資料</title>
+		<script>
+  			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			  ga('create', 'UA-64569290-1', 'auto');
+			  ga('send', 'pageview');
+		</script>
+	</head>
+	<body ng-app="HotelSearch" ng-controller="MainController">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="container">
+    	    <div id="navbar" class="collapse navbar-collapse">
+        	  <ul class="nav navbar-nav">
+            	<li><a href="index.html">查詢清單</a></li>
+                <li class="active"><a href="hotelList.html">飯店清單</a></li>
+	            <li><a href="hospitalList.html">醫院清單</a></li>
+                <li><a href="insurance.html">保險公司清單</a></li>
+	            <li><a href="howToHelp.html">如何幫助傷者</a></li>
+        	  </ul>
+	        </div><!--/.nav-collapse -->
+    	  </div>
+	    </nav>
+    	</br>
+	    </br>
+		<div class="container">
+			<div class="row">
+				<p>人間處處溫情，各方愛心再現，截至30日中午為止，全台已有12家旅館業者陸續響應，提供八仙樂園塵爆意外的傷患與家屬、醫療工作人員(部份提供)暫時免費住宿等服務，請有需要的民眾多加利用。以下是整理旅館名單與提供的服務（由北至南，依照鄰近醫院排序，持續增加中）</p>
+			</div>
+			<div class="row" ng-repeat="hotel in hotels | filter:searchFilter">
+				 <div class="jumbotron">
+       				 <h1><span ng-bind="hotel['旅館名稱']"></span></h1>
+       				 <p>聯絡電話：<span ng-bind="hotel['聯絡電話']"></span></p>
+                     <p>靠近醫院：<span ng-bind="hotel['靠近醫院']"></span></p>
+        			 <p>地址：<span ng-bind="hotel['地址']"></span></p>
+        			 <p><a href="https://www.google.com.tw/maps/place/{{hotel['地址']}}" target="_blank">點我看地圖</a></p>
+                     <p>網址：<span ng-bind="hotel['網址']"></span></p>
+	 	         </div>
+			</div>
+			<div class="row">
+				資料來源:<a href="http://travel.ettoday.net/article/527890.htm?from=fb_et_travel" target="_blank">東森旅遊雲-愛力獅報導</a>
+			</div>
+		</div>
+		<script>
+			angular.module('HotelSearch',[])
+				.controller('MainController',function($scope, $http, $filter){
+					$http.get('https://raw.githubusercontent.com/harry2690/psof/gh-pages/hotels.json').success(function(result) {
+        				$scope.hotels = result.data;
+        				$scope.lastmodify = result.lastmodify;
+        				
+      				});
+      				$scope.searchFilter = {};
+				}
+			);
+		</script>
+	</body>
+</html>
