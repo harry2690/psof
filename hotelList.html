@@ -36,19 +36,21 @@
     	  </div>
 	    </nav>
     	</br>
+        </br>
+        </br>
 	    </br>
 		<div class="container">
 			<div class="row">
-				<p>人間處處溫情，各方愛心再現，截至30日中午為止，全台已有12家旅館業者陸續響應，提供八仙樂園塵爆意外的傷患與家屬、醫療工作人員(部份提供)暫時免費住宿等服務，請有需要的民眾多加利用。以下是整理旅館名單與提供的服務（由北至南，依照鄰近醫院排序，持續增加中）</p>
+				<H3>人間處處溫情，各方愛心再現，截至30日中午為止，全台已有12家旅館業者陸續響應，提供八仙樂園塵爆意外的傷患與家屬、醫療工作人員(部份提供)暫時免費住宿等服務，請有需要的民眾多加利用。以下是整理旅館名單與提供的服務（由北至南，依照鄰近醫院排序，持續增加中）</H3>
 			</div>
 			<div class="row" ng-repeat="hotel in hotels | filter:searchFilter">
 				 <div class="jumbotron">
        				 <h1><span ng-bind="hotel['旅館名稱']"></span></h1>
-       				 <p>聯絡電話：<span ng-bind="hotel['聯絡電話']"></span></p>
+                     <p><span ng-bind="hotel['說明']"></span></p>
+       				 <p>聯絡電話：<span ng-bind="hotel['連絡電話']"></span></p>
                      <p>靠近醫院：<span ng-bind="hotel['靠近醫院']"></span></p>
-        			 <p>地址：<span ng-bind="hotel['地址']"></span></p>
-        			 <p><a href="https://www.google.com.tw/maps/place/{{hotel['地址']}}" target="_blank">點我看地圖</a></p>
-                     <p>網址：<span ng-bind="hotel['網址']"></span></p>
+        			 <p>地址：<span ng-bind="hotel['地址']"></span>&nbsp;&nbsp;(<a href="https://www.google.com.tw/maps/place/{{hotel['地址']}}" target="_blank">點我看地圖</a>)</p>
+                     <p>網址：<a href="{{hotel['網址']}}" target="_blank"><span ng-bind="hotel['網址']"></span></a></p>
 	 	         </div>
 			</div>
 			<div class="row">
